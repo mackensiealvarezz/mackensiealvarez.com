@@ -1,13 +1,13 @@
 <div class="relative pb-10 md:pb-20">
-    <div class="container px-6 py-20 mx-auto lg:px-0">
+    <div class="container px-6 py-4 mx-auto md:py-20 lg:px-0">
         {{-- Top part --}}
         <div class="justify-between md:flex align-items-center">
 
             {{-- text --}}
             <div class="relative w-2/3 space-y-3">
-                <label
+                {{-- <label
                     class="absolute top-0 left-0 text-4xl font-bold text-blue-300 transform -translate-y-8 md:translate-x-10 md:-translate-y-1 md:text-7xl opacity-20">
-                    print('welcome')</label>
+                    print('welcome')</label> --}}
                 <h2 class="text-sm font-light text-blue-200">i create things</h2>
                 <h1 class="mb-1 text-5xl font-bold leading-tight tracking-wide text-white md:text-7xl">
                     FullStack <br />
