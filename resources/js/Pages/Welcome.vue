@@ -36,7 +36,7 @@
                 class="px-8 py-10 bg-gray-300 rounded-md shadow-2xl dark:bg-gray-700"
             >
                 <!-- flex -->
-                <div class="flex items-start space-x-10">
+                <div class="items-start space-y-4 text-center md:space-x-10 md:flex">
                     <!-- Picture -->
 
                    <img
