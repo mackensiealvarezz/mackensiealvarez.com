@@ -17,7 +17,7 @@
         <!-- List of projects -->
         <div class="container relative space-y-10 md:mx-10">
             <!-- card -->
-            <span class="text-gray-100">coming soon</span>
+            <span class="dark:text-gray-100">coming soon</span>
         </div>
     </app-layout>
 </template>
@@ -34,15 +34,3 @@ export default {
     }
 };
 </script>
-
-<style>
-.toggle-checkbox:checked {
-    @apply: right-0 border-green-400;
-    right: 0;
-    border-color: #68d391;
-}
-.toggle-checkbox:checked + .toggle-label {
-    @apply: bg-green-400;
-    background-color: #68d391;
-}
-</style>
