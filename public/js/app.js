@@ -4782,6 +4782,59 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Components_SwitchField__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/Components/SwitchField */ "./resources/js/Components/SwitchField.vue");
+/* harmony import */ var _asset_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/asset.js */ "./resources/js/asset.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4790,13 +4843,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {
     SwitchField: _Components_SwitchField__WEBPACK_IMPORTED_MODULE_0__.default
   },
   data: function data() {
     return {
-      darkMode: false
+      darkMode: true
     };
   },
   watch: {
@@ -4810,23 +4864,23 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  mounted: function mounted() {// localStorage.theme = "dark";
-    // // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-    // if (
-    //   localStorage.theme === "dark" ||
-    //   (!("theme" in localStorage) &&
-    //     window.matchMedia("(prefers-color-scheme: dark)").matches)
-    // ) {
-    //   document.documentElement.classList.add("dark");
-    // } else {
-    //   document.documentElement.classList.remove("dark");
-    // }
-    // Whenever the user explicitly chooses light mode
+  mounted: function mounted() {
+    localStorage.theme = "dark"; // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+
+    if (localStorage.theme === "dark" || !("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    } // Whenever the user explicitly chooses light mode
     // localStorage.theme = "light";
     // Whenever the user explicitly chooses dark mode
     //  localStorage.theme = "dark";
     // Whenever the user explicitly chooses to respect the OS preference
     // localStorage.removeItem("theme");
+
+  },
+  methods: {
+    asset: _asset_js__WEBPACK_IMPORTED_MODULE_1__.asset
   }
 });
 
@@ -4840,7 +4894,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "../../../node_modules/vue/dist/vue.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /* harmony import */ var _inertiajs_inertia_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue */ "./node_modules/@inertiajs/inertia-vue/dist/index.js");
 /* harmony import */ var _inertiajs_progress__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/progress */ "./node_modules/@inertiajs/progress/dist/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // Import modules...
@@ -4868,6 +4922,32 @@ new vue__WEBPACK_IMPORTED_MODULE_2__.default({
 
 /***/ }),
 
+/***/ "./resources/js/asset.js":
+/*!*******************************!*\
+  !*** ./resources/js/asset.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "asset": () => (/* binding */ asset)
+/* harmony export */ });
+/* provided dependency */ var process = __webpack_require__(/*! process/browser */ "./node_modules/process/browser.js");
+var asset = function asset(path) {
+  // default to MIX_ASSET_URL
+  var prefix = process.env.MIX_ASSET_URL;
+
+  if (!prefix) {
+    // fallback to determining ASSET_URL from meta tag
+    prefix = document.head.querySelector('meta[name="asset-url"]').content;
+  }
+
+  return prefix + "/" + path.replace(/^\/+/, "");
+};
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -4882,7 +4962,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -4916,7 +4996,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.toggle-checkbox:checked {\n@apply: right-0 border-green-400;\n    right: 0;\n    border-color: #68d391;\n}\n.toggle-checkbox:checked + .toggle-label {\n@apply: bg-green-400;\n    background-color: #68d391;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.toggle-checkbox:checked {\n@apply: right-0 border-green-400;\n  right: 0;\n  border-color: #68d391;\n}\n.toggle-checkbox:checked + .toggle-label {\n@apply: bg-green-400;\n  background-color: #68d391;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23354,13 +23434,13 @@ var render = function() {
         "div",
         {
           staticClass:
-            "flex items-center w-16 h-10 p-1 duration-300 ease-in-out bg-gray-300 rounded-full",
+            "flex items-center h-8 p-1 duration-300 ease-in-out bg-gray-300 rounded-full w-14 md:w-16 md:h-10",
           class: { "bg-green-400": _vm.switchValue }
         },
         [
           _c("div", {
             staticClass:
-              "w-8 h-8 duration-300 ease-in-out transform bg-white rounded-full shadow-md",
+              "w-8 h-8 duration-300 ease-in-out transform bg-white rounded-full shadow-md md:w-8 md:h-8",
             class: { "translate-x-6": _vm.switchValue }
           })
         ]
@@ -23391,18 +23471,132 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "min-h-screen antialiased bg-gray-100 dark:bg-gray-900" },
+    [
+      _c("div", { staticClass: "container px-8 py-10 mx-auto space-y-10" }, [
+        _c("div", { staticClass: "relative header-section" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "flex items-center justify-end space-x-5 font-medium dark:text-gray-100"
+            },
+            [
+              _c("SwitchField", {
+                attrs: { toggleActive: _vm.darkMode },
+                on: {
+                  onChange: function($event) {
+                    _vm.darkMode = !_vm.darkMode
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("label", { staticClass: "cursor-pointer hover:underline" }, [
+                _vm._v("Projects")
+              ])
+            ],
+            1
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "px-8 py-10 bg-gray-300 rounded-md shadow-2xl dark:bg-gray-700"
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass:
+                  "items-start space-y-4 text-center md:space-x-10 md:flex"
+              },
+              [
+                _c("img", {
+                  staticClass:
+                    "mx-auto border-4 border-gray-400 rounded-full dark:border-gray-800 justify-self-center w-52 h-52",
+                  attrs: { src: _vm.asset("images/me.jpeg") }
+                }),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ]
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "min-h-screen antialiased bg-gray-200 dark:bg-gray-900" },
-      [_c("label", { staticClass: "text-white" }, [_vm._v("tests")])]
-    )
+    return _c("div", { staticClass: "relative mt-10 space-y-5" }, [
+      _c(
+        "h1",
+        {
+          staticClass:
+            "font-extrabold tracking-tight text-gray-900 dark:text-white text-7xl"
+        },
+        [
+          _vm._v("\n        Fullstack\n        "),
+          _c("br"),
+          _vm._v("Developer\n      ")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "p",
+        {
+          staticClass:
+            "text-base italic font-medium text-gray-800 dark:text-gray-300"
+        },
+        [
+          _vm._v(
+            "\n        currently exploring new frontend frameworks like\n        tailwindcss(this site was made using it)\n      "
+          )
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "space-y-4" }, [
+      _c("h3", { staticClass: "text-4xl italic font-bold opacity-70" }, [
+        _c("span", { staticClass: "text-red-800 dark:text-red-500" }, [
+          _vm._v("\n              <?\n              "),
+          _c("span", { staticClass: "text-blue-500 dark:text-blue-300" }, [
+            _vm._v("echo")
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "text-green-700 dark:text-green-300" }, [
+            _vm._v("'welcome'")
+          ]),
+          _vm._v("\n              ; ?>\n            ")
+        ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "p",
+        {
+          staticClass:
+            "font-semibold leading-relaxed text-gray-900 dark:text-white"
+        },
+        [
+          _vm._v(
+            "\n            I'm Mackensie Alvarez! Experienced Mobile and Web Developer that is extremely passionate about his work.\n            Strong engineering professional with a Bachelor’s Degree focused in Computer Science from New Jersey City University.\n            Coding started as a hobby at a very early age.\n            I realized very early on that I wanted to be a programmer because of the art of coding.\n            The ability to think of an idea and make it exactly how you imagine.\n          "
+          )
+        ]
+      )
+    ])
   }
 ]
 render._withStripped = true
@@ -23524,43 +23718,10 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ "./resources/js/Pages sync recursive ^\\.\\/.*$":
-/*!*******************************************!*\
-  !*** ./resources/js/Pages/ sync ^\.\/.*$ ***!
-  \*******************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var map = {
-	"./Welcome": "./resources/js/Pages/Welcome.vue",
-	"./Welcome.vue": "./resources/js/Pages/Welcome.vue"
-};
-
-
-function webpackContext(req) {
-	var id = webpackContextResolve(req);
-	return __webpack_require__(id);
-}
-function webpackContextResolve(req) {
-	if(!__webpack_require__.o(map, req)) {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	}
-	return map[req];
-}
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
-
-/***/ }),
-
-/***/ "../../../node_modules/vue/dist/vue.esm.js":
-/*!*************************************************!*\
-  !*** ../../../node_modules/vue/dist/vue.esm.js ***!
-  \*************************************************/
+/***/ "./node_modules/vue/dist/vue.esm.js":
+/*!******************************************!*\
+  !*** ./node_modules/vue/dist/vue.esm.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35549,6 +35710,39 @@ Vue.compile = compileToFunctions;
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Vue);
 
+
+/***/ }),
+
+/***/ "./resources/js/Pages sync recursive ^\\.\\/.*$":
+/*!*******************************************!*\
+  !*** ./resources/js/Pages/ sync ^\.\/.*$ ***!
+  \*******************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./Welcome": "./resources/js/Pages/Welcome.vue",
+	"./Welcome.vue": "./resources/js/Pages/Welcome.vue"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 
 /***/ })
 
