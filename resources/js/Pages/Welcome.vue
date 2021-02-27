@@ -8,12 +8,20 @@
                 Fullstack
                 <br />Developer
             </h1>
-            <p
-                class="text-base italic font-medium text-gray-800 dark:text-gray-300"
+            <transition
+                name="slide-in-right"
+                enter-active-class="transition-all duration-1000 ease-out delay-200"
+                enter-class="transform translate-x-24 opacity-0"
+                enter-to-class="transform translate-x-0 opacity-100"
             >
-                currently exploring new frontend frameworks like
-                tailwindcss(this site was made using it)
-            </p>
+                <p
+                    v-show="show"
+                    class="text-base italic font-medium text-gray-800 dark:text-gray-300"
+                >
+                    currently exploring new frontend frameworks like
+                    tailwindcss(this site was made using it)
+                </p>
+            </transition>
         </div>
         <!-- Card -->
         <div
@@ -69,9 +77,18 @@
 <script>
 import AppLayout from "@/Layouts/AppLayout";
 import { asset } from "@/asset.js";
+import "animate.css";
 export default {
     components: {
         AppLayout
+    },
+    data() {
+        return {
+            show: false
+        };
+    },
+    mounted() {
+        this.show = true;
     },
     methods: {
         asset: asset
