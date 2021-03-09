@@ -15,9 +15,17 @@
         </div>
 
         <!-- List of projects -->
-        <div class="container relative space-y-10 md:mx-10">
+        <div class="container relative flex justify-center space-y-10 md:mx-10">
             <!-- card -->
-            <span class="dark:text-gray-100">coming soon</span>
+           <div class="space-y-3 card">
+               <h1 class="text-2xl font-bold dark:text-white">TailDual
+                   <span class="text-sm font-semibold text-gray-500 dark:text-gray-300">Coming soon</span>
+               </h1>
+                <img :src="asset('images/taildual.jpg')" class="rounded-2xl">
+                <p class="mt-2 dark:text-gray-100">
+                     Complete challenges and different design task all while using tailwindcss
+                </p>
+           </div>
         </div>
     </app-layout>
 </template>
